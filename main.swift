@@ -10,6 +10,14 @@ var QUIM = 0
 var valor = "null"
 var ValidarNUM = false
 
+func Menu2 (){
+    print("\n1- Clases aprobadas")
+    print("2- Clases Reprobadas")
+    print("3- Ver todas las notas")
+    print("4- agregar notas de nuevo")
+    print("5- salir\n")
+}
+
 func ImprimirNotas (){
     print("")
     print(MATE, "-Matematicas")
@@ -49,13 +57,25 @@ func pedirCien (){
     valor = readLine()!
     CIEN = Int(valor) ?? 0
         if(CIEN<=100){
-            ImprimirNotas()
+            pedirHis()
         }else{
             print("Nota Incorrecta Volver a Ingresar")
             pedirCien()
         }
 }
 
+
+func pedirHis (){
+    print("\nIngrese su nota de historia ")
+    valor = readLine()!
+    HIST = Int(valor) ?? 0
+        if(HIST<=100){
+            Menu2()
+        }else{
+            print("Nota Incorrecta Volver a Ingresar")
+            pedirHis()
+        }
+}
 
 
 
