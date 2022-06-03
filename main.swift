@@ -1,5 +1,5 @@
 //Ejercicio 6
-/*Escribir un programa que almacene las asignaturas de un curso (por ejemplo Matemáticas, Física, Química, Historia y Lengua) en una lista, pregunte al usuario la nota que ha sacado en cada asignatura y elimine de la lista las asignaturas aprobadas. Al final el programa debe mostrar por pantalla las asignaturas que el usuario tiene que repetir.*/
+/*Escribir un programa que almacene las asignaturas de un curso (por ejemplo Matemáticas, Física, Química, Historia y Lengua), pregunte al usuario la nota que ha sacado en cada asignatura  Al final el programa debe mostrar por pantalla las asignaturas que el usuario tiene que repetir.*/
 
 
 var MATE = 100
@@ -52,11 +52,15 @@ func ejecutarMenu (){
 
 
 func ImprimirNotas (){
-    print("")
+    print("=========================")
+    print(QUIM, "-Quimica")
     print(MATE, "-Matematicas")
     print(ESPA, "-Espaniol")
     print(CIEN, "-Ciencias")
     print(HIST, "-Historia")
+    print("=========================")
+
+    
 }
 
 
@@ -71,7 +75,6 @@ func pedirMate(){
     pedirMate()
     }
 }
-
 
 func pedirEspa(){
 print("\nIngrese su nota de Espaniol ")
@@ -121,13 +124,9 @@ func pedirQuimi (){
         }
 }
 
-
-
-
-
-
-
 func TODAS (){
+    print("=========================")
+    
 if (MATE >= n && ESPA >= n && CIEN >= n && 
     HIST >= n && QUIM >= n){
     print( "Todas las materias estan aprovadas")
@@ -159,11 +158,14 @@ if (MATE >= n && ESPA >= n && CIEN >= n &&
                     }
 
          }
-    
+        print("=========================")
+
 }
 
 
 func reprobadas (){
+        print("=========================")
+
 if (MATE <= n && ESPA <= n && CIEN <= n && 
                 HIST <= n && QUIM <= n){
                 print( "Todas las materias reprobadas")
@@ -188,6 +190,8 @@ if (MATE <= n && ESPA <= n && CIEN <= n &&
                         print("Reprobada:",QUIM, "QUImica")
                     }
             }
+        print("=========================")
+
 }
 
 
