@@ -9,6 +9,7 @@ var HIST = 0
 var QUIM = 0
 var valor = "null"
 var ValidarNUM = false
+var n = 60
 
 func Menu2 (){
     print("\n1- Clases aprobadas")
@@ -16,6 +17,7 @@ func Menu2 (){
     print("3- Ver todas las notas")
     print("4- agregar notas de nuevo")
     print("5- salir\n")
+    valor = readLine()!
 }
 
 func ImprimirNotas (){
@@ -70,6 +72,17 @@ func pedirHis (){
     valor = readLine()!
     HIST = Int(valor) ?? 0
         if(HIST<=100){
+            pedirQuimi()
+        }else{
+            print("Nota Incorrecta Volver a Ingresar")
+            pedirHis()
+        }
+}
+func pedirQuimi (){
+    print("\nIngrese su nota de quimica ")
+    valor = readLine()!
+    QUIM = Int(valor) ?? 0
+        if(QUIM<=100){
             Menu2()
         }else{
             print("Nota Incorrecta Volver a Ingresar")
@@ -78,10 +91,33 @@ func pedirHis (){
 }
 
 
-
 print("Notas Semestrales \n")
 pedirMate()
 
 
 
+
+func TODAS (){
+if (MATE >= n || ESPA >= n || CIEN >= n || 
+    HIST >= n || QUIM >= n){
+    print( "Todas las materias estan aprovadas")
+    print("\nMatematicas", MATE, "\nEspanol", 
+          ESPA, "\nciencias", CIEN, "\nHistoria", 
+          HIST, "\nQuimica", QUIM)
+    }    else if (MATE <= n || ESPA <= n || CIEN <= n || 
+                HIST <= n || QUIM <= n){
+                print( "Todas las materias reprobadas")
+                print("\nMatematicas", MATE, "\nEspanol", 
+                      ESPA, "\nciencias", CIEN, "\nHistoria", 
+                      HIST, "\nQuimica", QUIM)
+    
+                }
+    
+}
+
+
+
+if (Mate >= 60){
+    print("")
+}
 
