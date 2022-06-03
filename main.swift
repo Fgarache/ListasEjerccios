@@ -2,16 +2,19 @@
 /*Escribir un programa que almacene las asignaturas de un curso (por ejemplo Matemáticas, Física, Química, Historia y Lengua) en una lista, pregunte al usuario la nota que ha sacado en cada asignatura y elimine de la lista las asignaturas aprobadas. Al final el programa debe mostrar por pantalla las asignaturas que el usuario tiene que repetir.*/
 
 
-var MATE = 0
-var ESPA = 0
-var CIEN = 0
+var MATE = 100
+var ESPA = 100
+var CIEN = 99
 var HIST = 0
 var QUIM = 0
 var valor = "null"
 var ValidarNUM = false
 var n = 60
 
-TODAS ()
+
+print("Notas Semestrales \n")
+Menu2()
+
 
 func Menu2 (){
     print("\n1- Clases aprobadas")
@@ -20,6 +23,30 @@ func Menu2 (){
     print("4- agregar notas de nuevo")
     print("5- salir\n")
     valor = readLine()!
+    ejecutarMenu()
+}
+
+func ejecutarMenu (){
+    switch (valor) {
+    case "1":    
+            TODAS ()
+            Menu2()
+    break
+    case "2":
+            reprobadas()
+            Menu2()
+    break
+    case "3":
+            ImprimirNotas()
+            Menu2()
+    break
+    case "4": pedirMate()
+            Menu2()
+        case "5": print("Salir")
+    default: print("Error elige otra obcion")
+        Menu2()
+    
+}
 }
 
 
@@ -95,21 +122,20 @@ func pedirQuimi (){
 }
 
 
-print("Notas Semestrales \n")
-pedirMate()
+
 
 
 
 
 func TODAS (){
-if (MATE >= n || ESPA >= n || CIEN >= n || 
-    HIST >= n || QUIM >= n){
+if (MATE >= n && ESPA >= n && CIEN >= n && 
+    HIST >= n && QUIM >= n){
     print( "Todas las materias estan aprovadas")
     print("\nMatematicas", MATE, "\nEspanol", 
           ESPA, "\nciencias", CIEN, "\nHistoria", 
           HIST, "\nQuimica", QUIM)
-    }    else if (MATE <= n || ESPA <= n || CIEN <= n || 
-                HIST <= n || QUIM <= n){
+    }    else if (MATE <= n && ESPA <= n && CIEN <= n && 
+                HIST <= n && QUIM <= n){
                 print( "Todas las materias reprobadas")
                 print("\nMatematicas", MATE, "\nEspanol", 
                       ESPA, "\nciencias", CIEN, "\nHistoria", 
@@ -137,6 +163,32 @@ if (MATE >= n || ESPA >= n || CIEN >= n ||
 }
 
 
+func reprobadas (){
+if (MATE <= n && ESPA <= n && CIEN <= n && 
+                HIST <= n && QUIM <= n){
+                print( "Todas las materias reprobadas")
+                print("\nMatematicas", MATE, "\nEspanol", 
+                      ESPA, "\nciencias", CIEN, "\nHistoria", 
+                      HIST, "\nQuimica", QUIM)
+    
+                }else{
+                    if (MATE <= 60){
+                        print("Reprobada:",MATE, "Matematicas")
+                    }
+                    if (ESPA <= 60){
+                        print("Reprobada:",ESPA, "Espanol")
+                    }
+                    if (CIEN <= 60){
+                         print("Reprobada:",CIEN, "Ciencias")
+                    }
+                    if (HIST <= 60){
+                        print("Reprobada:",HIST, "Historia")
+                    }
+                    if (QUIM <= 60){
+                        print("Reprobada:",QUIM, "QUImica")
+                    }
+            }
+}
 
 
 
