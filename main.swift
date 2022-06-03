@@ -11,6 +11,8 @@ var valor = "null"
 var ValidarNUM = false
 var n = 60
 
+TODAS ()
+
 func Menu2 (){
     print("\n1- Clases aprobadas")
     print("2- Clases Reprobadas")
@@ -19,6 +21,8 @@ func Menu2 (){
     print("5- salir\n")
     valor = readLine()!
 }
+
+
 
 func ImprimirNotas (){
     print("")
@@ -111,13 +115,28 @@ if (MATE >= n || ESPA >= n || CIEN >= n ||
                       ESPA, "\nciencias", CIEN, "\nHistoria", 
                       HIST, "\nQuimica", QUIM)
     
-                }
+                }else{
+                     if (MATE >= 60){
+                        print("Aprobada:",MATE)
+                    }
+                    if (ESPA >= 60){
+                        print("Aprobada:",ESPA, "Espanol")
+                    }
+                    if (CIEN >= 60){
+                         print("Aprobada:",CIEN, "Ciencias")
+                    }
+                    if (HIST >= 60){
+                        print("Aprobada:",HIST, "Historia")
+                    }
+                    if (QUIM >= 60){
+                        print("Aprobada:",QUIM, "QUImica")
+                    }
+
+         }
     
 }
 
 
 
-if (Mate >= 60){
-    print("")
-}
+
 
